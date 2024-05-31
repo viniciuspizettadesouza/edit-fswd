@@ -29,7 +29,7 @@ let endereco;
 console.log("Valor de endereco:", endereco);
 
 // 6. Declare uma variável nomeCompleto e atribua a ela um valor de string que contenha seu nome e sobrenome.
-let nome = "Maria";
+nome = "Maria";
 let sobrenome = "Silva";
 let nomeCompleto = `${nome} ${sobrenome}`;
 

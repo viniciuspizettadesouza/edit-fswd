@@ -33,8 +33,8 @@ let imc = weight / (height * height);
 console.log(`${name} pesa ${weight}kg e mede ${height}m, logo tem um índice de massa corporal de ${imc.toFixed(2)}`);
 
 // 4
-let x = 5; // Base ou lado
-let y = 8; // Altura ou segundo lado
+x = 5; // Base ou lado
+y = 8; // Altura ou segundo lado
 
 // Calcular áreas
 let square = x * x;
@@ -67,7 +67,7 @@ if (numero % 2 === 0) {
 
 // 5
 // Solicitar ao utilizador para introduzir um número
-let number = prompt("Por favor, introduza um número:");
+number = prompt("Por favor, introduza um número:");
 
 // Verificar se o número é par ou ímpar
 if (number % 2 === 0) {
@@ -167,9 +167,9 @@ switch (day) {
 
 // 9
 // Solicitar ao utilizador para introduzir os valores e o operador
-let x = parseFloat(prompt("Por favor, introduza o primeiro valor (x):"));
+x = parseFloat(prompt("Por favor, introduza o primeiro valor (x):"));
 let op = prompt("Por favor, introduza o operador (+, -, /, *):");
-let y = parseFloat(prompt("Por favor, introduza o segundo valor (y):"));
+y = parseFloat(prompt("Por favor, introduza o segundo valor (y):"));
 
 // Verificar a operação usando switch
 switch (op) {
