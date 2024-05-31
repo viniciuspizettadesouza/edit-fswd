@@ -104,39 +104,19 @@ if (isNaN(kmh) || kmh < 0) {
 }
 
 // 7
-// Solicitar ao utilizador para introduzir o número de minutos
-let totalMinutes = prompt("Por favor, introduza o número total de minutos:");
+let minutosTotal = 150;
 
-// Converter a entrada do utilizador para um número inteiro
-totalMinutes = parseInt(totalMinutes);
-
-// Verificar se a entrada é válida (número positivo)
-if (isNaN(totalMinutes) || totalMinutes < 0) {
-    console.log("Por favor, introduza um valor válido para o número de minutos.");
-} else {
-    // Calcular horas e minutos
-    let hours = Math.floor(totalMinutes / 60); // Divide por 60 para obter as horas
-    let minutes = totalMinutes % 60; // Calcula o resto da divisão por 60 para obter os minutos
-
-    console.log(`${totalMinutes} minutos equivale a ${hours} horas e ${minutes} minutos.`);
-}
-
-// 7
-// Número de minutos
-let minutosTotal = 135; // Você pode alterar o valor aqui
-
-// Calcular horas e minutos
 console.log(minutosTotal / 60)
-let horas = parseInt(minutosTotal / 60); // Divisão inteira para obter as horas
-let minutos = minutosTotal % 60; // Resto da divisão para obter os minutos
+console.log(parseInt(minutosTotal / 60))
+console.log(Math.floor(minutosTotal / 60))
 
-// Exibir o resultado
-console.log(`${minutosTotal} minutos são ${horas} horas e ${minutos} minutos.`);
+let horas = Math.floor(minutosTotal / 60);
+let minutos = minutosTotal % 60;
 
+console.log(horas, minutos)
 
 // 8
-// Solicitar ao utilizador para introduzir o nome do dia da semana
-let day = prompt("Por favor, introduza o nome do dia da semana:");
+let day = "segunda";
 
 switch (day) {
     case "segunda":
@@ -164,46 +144,39 @@ switch (day) {
         console.log("Dia da semana inválido");
 }
 
+// 9// 9
+// let x = parseFloat(prompt("mensagem"));
+x = 10;
+let op = "+";
+y = 5;
 
-// 9
-// Solicitar ao utilizador para introduzir os valores e o operador
-x = parseFloat(prompt("Por favor, introduza o primeiro valor (x):"));
-let op = prompt("Por favor, introduza o operador (+, -, /, *):");
-y = parseFloat(prompt("Por favor, introduza o segundo valor (y):"));
+let resultado;
 
-// Verificar a operação usando switch
 switch (op) {
     case "+":
-        console.log(`${x} + ${y} = ${x + y}`);
+        resultado = x + y;
         break;
     case "-":
-        console.log(`${x} - ${y} = ${x - y}`);
+        resultado = x - y;
         break;
     case "/":
-        if (y !== 0) {
-            console.log(`${x} / ${y} = ${x / y}`);
-        } else {
-            console.log("Divisão por zero não é permitida");
-        }
+        resultado = x / y;
         break;
     case "*":
-        console.log(`${x} * ${y} = ${x * y}`);
+        resultado = x * y;
         break;
     default:
         console.log("Operador inválido");
+        break;
 }
 
+console.log(resultado)
 
 // 10
-// Solicitar ao utilizador para introduzir um número
-let number = prompt("Por favor, introduza um número:");
+// false ? console.log('1') : console.log('2')
 
-// Converter a entrada do utilizador para um número inteiro
-number = parseInt(number);
+numero = 10;
 
-// Verificar se o número é par ou ímpar usando operador ternário
-let result = (number % 2 === 0) ? "par" : "ímpar";
+resultado = (numero % 2 === 0) ? "par" : "ímpar";
 
-console.log(`O número ${number} é ${result}.`);
-
-
+console.log(`O número ${numero} é ${resultado}.`);
