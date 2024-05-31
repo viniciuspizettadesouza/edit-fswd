@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First HTML with Inline JS</title>
+</head>
+<body>
+    <h1>First HTML File with Inline JavaScript</h1>
+    <input type="text" id="taskInput" placeholder="Novo TODO">
+    <button onclick="addTask()">Adicionar</button>
+    <div id="taskList">
+    </div>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskList = document.getElementById('taskList');
+
+            const taskText = taskInput.value;
+
+            const newTask = document.createElement('p');
+            newTask.textContent = taskText;
+
+            const deleteButton = createDeleteButton(newTask);
+            const editButton = createEditButton(newTask)
+
+            taskList.appendChild(newTask);
+            taskList.appendChild(deleteButton);
+            taskList.appendChild(editButton);
+
+            taskInput.value = '';
+        }
+
+        function createDeleteButton(taskElement) {
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Excluir';
+            deleteButton.onclick = function () {
+                taskElement.remove();
+                deleteButton.remove();
+            };
+            return deleteButton;
+        }
+
+        function createEditButton(taskElement) {
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Editar';
+            editButton.onclick = function () {
+                const newTaskText = prompt('Editar todo:', taskElement.textContent);
+                taskElement.textContent = newTaskText;
+            };
+            return editButton;
+        }
+    </script>
+</body>
+
+</html>

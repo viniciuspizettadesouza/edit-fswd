@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button id="btnNavigate">Ir para URL</button>
+
+    <button id="btnShowHistory">Mostrar Número de Páginas no Histórico</button>
+
+    <button id="btnStartTimer">Iniciar Temporizador de 5 segundos</button>
+
+    <script>
+        // 1
+        document.getElementById("btnNavigate").onclick = function () {
+            window.location.href = 'https://google.com';
+        };
+
+        // 2
+        document.getElementById("btnShowHistory").onclick = function () {
+            console.log('Número de páginas no histórico: ' + window.history.length);
+        };
+
+        // 3
+        window.onload = function () {
+            console.log('A página terminou de carregar!');
+        };
+
+        // 4
+        document.getElementById("btnStartTimer").onclick = function () {
+            setTimeout(function () {
+                console.log('O tempo acabou!');
+            }, 5000);
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+    <title>Slideshow</title>
+</head>
+
+<body>
+    <h1>Slideshow</h1>
+    <div class="slides">
+        <div class="slide fade active">
+            <img src="mountains.jpg" />
+            <div class="caption">Mountains</div>
+        </div>
+        <div class="slide fade">
+            <img src="tropical.jpg" />
+            <div class="caption">Tropical</div>
+        </div>
+        <div class="slide fade">
+            <img src="city.jpg" />
+            <div class="caption">City</div>
+        </div>
+    </div>
+    <script>
+        const timer = 2000 // 2 seconds
+        const slideNodes = document.querySelectorAll('.slide')
+
+        let indexer = 1
+
+        const findActiveSlideIndex = () => {
+            console.log(slideNodes)
+            const slideArray = [...slideNodes]
+
+            return slideArray.findIndex((slideNode) =>
+                slideNode.classList.contains('active')
+            )
+        }
+
+        const findNextSlide = (currentSlideIndex) => {
+            const nextIndex = currentSlideIndex + indexer
+
+            return slideNodes[nextIndex]
+        }
+
+        const executeSlideshow = () => {
+            const activeSlideIndex = findActiveSlideIndex()
+
+            console.log(activeSlideIndex)
+            
+
+            let nextSlide = findNextSlide(activeSlideIndex)
+
+            console.log('nextSlide', nextSlide)
+
+            if (!nextSlide) {
+                indexer *= -1
+
+                nextSlide = findNextSlide(activeSlideIndex)
+            }
+
+            const currentSlide = slideNodes[activeSlideIndex]
+
+            currentSlide.classList.remove('active')
+            nextSlide.classList.add('active')
+        }
+
+        setInterval(executeSlideshow, timer)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página com JavaScript</title>
+</head>
+<body>
+
+<div id="minhaDiv">
+    <h1 id="titulo">Minha Página</h1>
+    <input type="text" id="campo1" placeholder="Campo 1">
+    <input type="text" id="campo2" placeholder="Campo 2">
+    <input type="text" id="campo3" placeholder="Campo 3">
+    <button onclick="alterarCor()">Alterar Cor do Título</button>
+    <button onclick="obterValores()">Obter Valores</button>
+    <button onclick="apagarElemento()">Apagar Campo 3</button>
+</div>
+
+<script>
+    // Encontrar os elementos
+const divElement = document.getElementById("minhaDiv");
+const tituloElement = document.getElementById("titulo");
+const campo1Element = document.getElementById("campo1");
+const campo2Element = document.getElementById("campo2");
+const campo3Element = document.getElementById("campo3");
+
+// Imprimir no console
+console.log("Elemento div:", divElement);
+console.log("Elemento título:", tituloElement);
+console.log("Elemento campo 1:", campo1Element);
+console.log("Elemento campo 2:", campo2Element);
+console.log("Elemento campo 3:", campo3Element);
+
+// Alterar a cor do título
+function alterarCor() {
+    tituloElement.style.color = "blue";
+    console.log("Cor do título alterada para azul");
+}
+
+// Receber o valor dos campos input
+function obterValores() {
+    const valorCampo1 = campo1Element.value;
+    const valorCampo2 = campo2Element.value;
+    const valorCampo3 = campo3Element.value;
+
+    console.log("Valor do Campo 1:", valorCampo1);
+    console.log("Valor do Campo 2:", valorCampo2);
+    console.log("Valor do Campo 3:", valorCampo3);
+}
+
+// Apagar um dos elementos
+function apagarElemento() {
+    divElement.removeChild(campo3Element);
+    console.log("Campo 3 removido");
+}
+
+</script>
+
+</body>
+</html>

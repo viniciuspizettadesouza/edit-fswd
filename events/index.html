@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>1 - Alterando o Conteúdo de Texto</h2>
+    <p id="texto">Texto inicial</p>
+    <button id="alterarTextoBtn">Alterar Texto</button>
+
+    <h2>2 e 3 - Adicionando e Removendo Elementos</h2>
+    <ul id="lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <input type="text" id="novoItemInput">
+
+    <button id="adicionarItemBtn">Adicionar Item</button>
+
+    <h2>4 - Campo de Entrada de Formulário</h2>
+    <input type="text" id="campoEntrada">
+    <p id="valorCampo">Valor atual:</p>
+
+    <h2>5 - Evento Mouseover</h2>
+    <div id="elementoMouseover" style="background-color:yellow;width: 120px;height:20px;padding: 40px;"></div>
+    <script>
+        // 1
+        let alterarTextoBtn = document.getElementById('alterarTextoBtn');
+        alterarTextoBtn.addEventListener('click', atualizaTexto);
+        function atualizaTexto() {
+            document.getElementById('texto').textContent = 'Texto atualizado';
+        }
+
+        // 2
+        let adicionarItemBtn = document.getElementById('adicionarItemBtn');
+        let lista = document.getElementById('lista');
+
+        adicionarItemBtn.addEventListener('click', adicionarElemento);
+
+        function adicionarElemento() {
+            let novoItemInput = document.getElementById('novoItemInput');
+            let novoItem = document.createElement('li');
+            novoItem.textContent = novoItemValor;
+            lista.appendChild(novoItem);
+            novoItemInput.value = '';
+        }
+
+        // 3
+        lista.addEventListener('click', removerElemento);
+        function removerElemento(event) {
+            console.log(event)
+            if (event.target.tagName === 'LI') {
+                event.target.parentNode.removeChild(event.target);
+            }
+        }
+
+        // 4
+        let campoEntrada = document.getElementById('campoEntrada');
+        campoEntrada.addEventListener('input', pegarValorDigitado);
+        function pegarValorDigitado() {
+            document.getElementById('valorCampo').textContent = 'Valor atual: ' + campoEntrada.value;
+        }
+
+        // 5
+        let elementoMouseover = document.getElementById('elementoMouseover');
+        elementoMouseover.addEventListener('mouseover', function () {
+            alterarCor('blue');
+        });
+        elementoMouseover.addEventListener('mouseout', () => {
+            alterarCor('red');
+        });
+
+        function alterarCor(cor) {
+            elementoMouseover.style.backgroundColor = cor;
+        }    
+    </script>
+
+</body>
+
+</html>
