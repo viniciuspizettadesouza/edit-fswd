@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Métodos do Objeto Document</title>
+</head>
+<body>
+    <div id="my-box">
+        <span class="title other-class">
+            Box Title
+        </span>
+        <p class="title"></p>
+        <p>Paragraph text</p>
+
+    </div>
+
+    <script>
+        const myBoxElement = document.getElementById('my-box')
+
+        const titleElement = document.getElementsByClassName('title')
+
+        const paragraphElement = document.querySelector('p')
+
+        const allTitleElement = document.querySelectorAll('.title')
+        console.log(myBoxElement, titleElement, paragraphElement, allTitleElement)
+        
+        /////
+        
+        const box = document.createElement('div')
+        const title = document.createElement('p')
+
+        box.classList.add('title')
+        title.textContent = 'My Title'
+
+        box.appendChild(title)
+        myBoxElement.appendChild(box)
+
+        const multiClassElements = document.getElementsByClassName('title other-class')
+        console.log(multiClassElements)
+    </script>
+</body>
+</html>
